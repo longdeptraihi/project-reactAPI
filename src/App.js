@@ -18,9 +18,33 @@ function App() {
     }
     getProduct();
   }, [])
+  const onHandleAdd = async (product) => {
+    try {
+      console.log(product)
+      const { data } = await ProductAPI.add(product);
+      console.log(data)
+      setProducts([
+        ...products,
+        data
+      ]);
+    } catch (error) {
+      console.log(error)
+    }
+  }
+  const onHandleDelete = async (id) => {
+    try {
+      await ProductAPI.remove(id);
+      const newProducts = products.filter(product => product.id !== id);
+      setProducts(newProducts);
+    } catch (error) {
+      console.log(error)
+    }
+
+    // console.log(todos);
+  }
   return (
     <div className="App container">
-      <Routers products={products} />
+      <Routers products={products} list={products} onDelete={onHandleDelete} onAdd={onHandleAdd} />
     </div>
   );
 }

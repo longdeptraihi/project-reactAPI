@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Header = () => {
+const HeaderWebsite = () => {
     return (
         <div>
             <div className="header-top ">
@@ -74,4 +74,4 @@ const Header = () => {
     )
 }
 
-export default Header
+export default HeaderWebsite
