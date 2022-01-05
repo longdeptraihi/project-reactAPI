@@ -1,7 +1,8 @@
 import React from 'react';
 import 'antd/dist/antd.css';
-import { Table, Tag, Space, Button, Image } from 'antd';
+import { Table, Space, Button, Image } from 'antd';
 import { Link } from 'react-router-dom';
+import { Rate } from 'antd';
 
 const ListProducts = (props) => {
 
@@ -23,6 +24,12 @@ const ListProducts = (props) => {
             key: 'price',
         },
         {
+            title: 'rate',
+            dataIndex: 'rate',
+            key: 'rate',
+            render: (rate) => <Rate allowHalf defaultValue={2.5} />
+        },
+        {
             title: 'image',
             dataIndex: 'image',
             key: 'image',
@@ -40,7 +47,7 @@ const ListProducts = (props) => {
 
                 <Space size="middle">
                     <Button type="primary">
-                        <Link to="/"  >Edit</Link>
+                        <Link to={`/admin/products/edit/${product.id}`}  >Edit</Link>
                     </Button>
                     <Button type="danger" onClick={() => props.onDelete(product.id)}>
                         Delete

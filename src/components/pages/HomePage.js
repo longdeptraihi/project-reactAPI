@@ -1,3 +1,4 @@
+import { Rate } from 'antd'
 import React from 'react'
 import CategoryPage from './CategoryPage'
 
@@ -27,11 +28,7 @@ const HomePage = (props) => {
                                     <div className="sub-product">
                                         <div className="hehe">
                                             <div className="rating">
-                                                <i className="fas fa-star" />
-                                                <i className="fas fa-star" />
-                                                <i className="fas fa-star" />
-                                                <i className="fas fa-star" />
-                                                <i className="fas fa-star" />
+                                                <Rate className="text-dark" allowHalf defaultValue={2.5} />
                                             </div>
                                             <div className="cart">
                                                 <img src="./img/Add to Cart Button.png" />

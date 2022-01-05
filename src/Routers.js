@@ -2,8 +2,7 @@ import React from "react";
 import {
     BrowserRouter as Router,
     Switch,
-    Route,
-    Link
+    Route
 } from "react-router-dom";
 import LayoutAdmin from "./components/LayoutAdmin/LayoutAdmin";
 import LayoutWebsite from "./components/LayoutWebsite/LayoutWebsite";
@@ -11,6 +10,7 @@ import HomePage from "./components/pages/HomePage";
 import HeaderWebsite from "./components/LayoutWebsite/Header";
 import ProductsAddPage from "./components/LayoutAdmin/ProductsAddPage";
 import ListProducts from "./components/LayoutAdmin/ListProducts";
+import ProductEditPage from "./components/LayoutAdmin/ProductEditPage";
 const Routers = (props) => {
     return (
         <>
@@ -23,6 +23,9 @@ const Routers = (props) => {
                             </Route>
                             <Route exact path="/admin/listproduct">
                                 <ListProducts {...props} />
+                            </Route>
+                            <Route exact path="/admin/products/edit/:id">
+                                <ProductEditPage {...props} />
                             </Route>
                         </LayoutAdmin>
                     </Route>

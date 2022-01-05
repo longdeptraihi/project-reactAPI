@@ -17,10 +17,10 @@ const ProductAPI = {
         const url = `/products/${id}`
         return axiosClient.delete(url);
     },
-    /* update(id, data) {
-        const url = `/product/${id}`
-        return axiosClient.put(url, data);
-    } */
+    update(id) {
+        const url = `/products/${id.id}`
+        return axiosClient.put(url, id);
+    }
 
 }
 export default ProductAPI;

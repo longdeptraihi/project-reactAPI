@@ -7,6 +7,7 @@ import ProductAPI from './api/productAPI';
 function App() {
   const [products, setProducts] = useState([]);
   useEffect(() => {
+
     // call api
     const getProduct = async () => {
       try {
@@ -32,19 +33,30 @@ function App() {
     }
   }
   const onHandleDelete = async (id) => {
+
     try {
+      
       await ProductAPI.remove(id);
       const newProducts = products.filter(product => product.id !== id);
       setProducts(newProducts);
     } catch (error) {
       console.log(error)
     }
-
-    // console.log(todos);
+  }
+  const onHandleEdit = async (id, product) => {
+    try {
+      const { data } = await ProductAPI.update(id, product);
+      const newProducts = products.map(value => value.id === id ? data : value);
+      setProducts(newProducts);
+    } catch (error) {
+      console.log(error)
+    }
   }
   return (
     <div className="App container">
-      <Routers products={products} list={products} onDelete={onHandleDelete} onAdd={onHandleAdd} />
+      <Routers products={products} list={products} onDelete={onHandleDelete}
+        onAdd={onHandleAdd} onEdit={onHandleEdit}
+      />
     </div>
   );
 }

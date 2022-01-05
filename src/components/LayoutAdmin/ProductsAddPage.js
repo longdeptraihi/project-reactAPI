@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import 'antd/dist/antd.css';
-import { Form, Input, Button, Radio } from 'antd';
-import { InfoCircleOutlined } from '@ant-design/icons';
+
+import { Form, Input, Button } from 'antd';
 import { useHistory } from 'react-router-dom';
 
 const ProductsAddPage = (props) => {

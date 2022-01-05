@@ -1,9 +1,8 @@
 import React from 'react'
 import 'antd/dist/antd.css';
 import { Layout, Menu, Breadcrumb } from 'antd';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 const { Header, Content, Footer, Sider } = Layout;
-const { SubMenu } = Menu;
 const LayoutAdmin = (props) => {
     return (
         <Layout style={{ minHeight: '100vh' }}>
